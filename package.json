@@ -1,0 +1,15 @@
+{
+  "name": "matrix-mail-example",
+  "version": "1.0.0",
+  "description": "A simple example of integrating an external service with the Matrix Requirements API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Matrix Requirements",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
