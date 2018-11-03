@@ -22,7 +22,7 @@ app.post("/matrix", (req, res) => {
 				html:
 					"<html><body><p>Testing SparkPost - the world's most awesomest email service!</p></body></html>"
 			},
-			recipients: [{ address: "developers+nodejs@sparkpost.com" }]
+			recipients: [{ address: "sparkbox@tilmans.space" }]
 		})
 		.then(data => {
 			console.log("Woohoo! You just sent your first mailing!");
