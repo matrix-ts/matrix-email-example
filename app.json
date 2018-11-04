@@ -2,5 +2,5 @@
 	"name":"Matrix Integration Example",
 	"description":"A starting point for integrating with the Matrix Requirements callback API. Implements a simple email bridge",
 	"success_url":"/",
-	"addons":["sparkpost"]	
+	"addons":[]	
 }
