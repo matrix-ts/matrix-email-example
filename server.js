@@ -29,7 +29,7 @@ app.post("/matrix", (req, res) => {
 	const message = req.body;
 
 	saveEvent(message);
-	sendEmail();
+	// sendEmail();
 	res.send("Done");
 });
 
@@ -51,6 +51,7 @@ function saveEvent(event) {
 		title: event.after.title,
 		modifiedBy: event.after.modifiedBy
 	});
+	console.info("New Events", events)
 }
 
 function sendEmail() {
