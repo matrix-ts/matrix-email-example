@@ -5,8 +5,10 @@ window.addEventListener("load", function() {
 function loadEvents(element) {
 	fetch("/events")
 		.then(function(response) {
-			// console.info("JSON", response.json());
-			updateTable(response.json());
+			response.json();			
+		})
+		.then(function(json) {
+			updateTable(json);
 		})
 		.finally(function() {
 			// setTimeout(function() {
