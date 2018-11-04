@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 /*jshint node: true */
-'use strict';
+"use strict";
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -12,10 +12,39 @@ var sparky = new SparkPost();
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('docs'));
+app.use(express.static("docs"));
 
+const events = [];
 
 app.post("/matrix", (req, res) => {
+	const message = req.body;
+
+	saveEvent(message);
+	sendEmail();
+	res.send("Done");
+});
+
+app.get("/events", (req, res) => {
+	res.json(events);
+})
+
+var server = app.listen(process.env.PORT || 8080, function() {
+	var port = server.address().port;
+	console.log("Server now running on port", port);
+});
+
+function saveEvent(event) {
+	events.push({
+		action: event.action,
+		project: event.project,
+		itemRef: event.itemRef,
+		time: event.after.date,
+		title: event.after.title,
+		modifiedBy: event.after.modifiedBy
+	});
+}
+
+function sendEmail() {
 	sparky.transmissions
 		.send({
 			options: {
@@ -37,10 +66,4 @@ app.post("/matrix", (req, res) => {
 			console.log("Whoops! Something went wrong");
 			console.log(err);
 		});
-	res.send("Done");
-});
-
-var server = app.listen(process.env.PORT || 8080, function() {
-	var port = server.address().port;
-	console.log("Server now running on port", port);
-});
+}
