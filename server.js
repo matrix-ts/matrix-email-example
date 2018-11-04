@@ -14,7 +14,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("docs"));
 
-const events = [];
+const events = [
+	{
+		action: "Something",
+		project: "Yo",
+		itemRef: "3434",
+		time: "Later",
+		title: "!!!!",
+		modifiedBy: "Me"
+	}
+];
 
 app.post("/matrix", (req, res) => {
 	const message = req.body;
@@ -26,7 +35,7 @@ app.post("/matrix", (req, res) => {
 
 app.get("/events", (req, res) => {
 	res.json(events);
-})
+});
 
 var server = app.listen(process.env.PORT || 8080, function() {
 	var port = server.address().port;
