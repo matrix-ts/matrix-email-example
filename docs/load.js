@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
 });
 
 function loadEvents(element) {
-	fetch("http://example.com/movies.json").then(function(response) {
+	fetch("/events").then(function(response) {
 		console.info("JSON", response.json());
 	});
 }
