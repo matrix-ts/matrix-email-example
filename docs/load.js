@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-	loadEvents();
+	loadEvents(document.getElementById("list"));
 });
 
 function loadEvents(element) {
@@ -8,17 +8,16 @@ function loadEvents(element) {
 			return response.json();
 		})
 		.then(function(json) {
-			updateTable(json);
+			updateTable(element, json);
 		})
 		.finally(function() {
-			// setTimeout(function() {
-			// 	loadEvents(element);
-			// }, 500);
+			setTimeout(function() {
+				loadEvents(element);
+			}, 500);
 		});
 }
 
-function updateTable(events) {
-	var list = document.getElementById("list");
+function updateTable(element, events) {
 	var newRows = document.createElement("tbody");
 	for (var i = 0; i < events.length; i++) {
 		var row = newRows.insertRow();
@@ -28,5 +27,5 @@ function updateTable(events) {
 			document.createTextNode(events[i].project)
 		);
 	}
-	list.parentNode.replaceChild(newRows, list);
+	element.parentNode.replaceChild(newRows, element);
 }
