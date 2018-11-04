@@ -8,6 +8,7 @@ function loadEvents(element) {
 			return response.json();
 		})
 		.then(function(json) {
+			console.info("Event Updates", json)
 			updateTable(element, json);
 		})
 		.finally(function() {
