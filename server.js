@@ -5,8 +5,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-var SparkPost = require("sparkpost");
-var sparky = new SparkPost();
+// var SparkPost = require("sparkpost");
+// var sparky = new SparkPost();
 
 // Initialize app
 const app = express();
