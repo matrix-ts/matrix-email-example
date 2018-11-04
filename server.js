@@ -51,7 +51,7 @@ function saveEvent(event) {
 		title: event.after.title,
 		modifiedBy: event.after.modifiedBy
 	});
-	console.info("New Events", events)
+	console.info("New Events", events);
 }
 
 function sendEmail() {
