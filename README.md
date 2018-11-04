@@ -17,7 +17,7 @@ The deployment is automated but before you need a (free) account at [Heroku](htt
 ## Configure your Matrix instance
 Once your server is up and running you have to configure your Matrix instance to send change notifications to it. Go to the Administration of your system, select Extensions, add the REST endpoint of your system and select the user to use for the notifications. If you are unsure about the REST endpoint, open the page on Heroku which will show the URL in bold text.
 
-![Configuration](config.png)
+![Configuration](img/config.png)
 
 Afterwards, click on "extended plugin settings" and configure the events that you want to forward. Below is an example with all possible events. You don't have to enable all of them.
 
