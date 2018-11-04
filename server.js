@@ -12,7 +12,7 @@ var sparky = new SparkPost();
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.user(express.static('docs'));
+app.use(express.static('docs'));
 
 
 app.post("/matrix", (req, res) => {
