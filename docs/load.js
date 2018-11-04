@@ -12,7 +12,7 @@ function loadEvents() {
 			updateTable(json);
 		})
 		.finally(function() {
-			loadEvents, 500);
+			window.setTimeout(loadEvents, 500);
 		});
 }
 
