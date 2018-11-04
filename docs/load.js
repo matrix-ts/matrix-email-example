@@ -1,4 +1,5 @@
 window.addEventListener("load", function() {
+	document.getElementById("url").innerHtml = window.location.href + "matrix";
 	loadEvents();
 });
 
