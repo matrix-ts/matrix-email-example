@@ -17,9 +17,10 @@ function loadEvents() {
 }
 
 function updateTable(events) {
-	var bodyID = "list"
+	var bodyID = "list";
 	var oldBody = document.getElementById(bodyID);
-	var newBody = document.createElement("tbody").setAttribute("id",bodyID);
+	var newBody = document.createElement("tbody");
+	newBody.setAttribute("id", bodyID);
 	for (var i = 0; i < events.length; i++) {
 		var row = newBody.insertRow();
 		row.insertCell().appendChild(document.createTextNode(events[i].time));
