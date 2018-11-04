@@ -1,4 +1,4 @@
-# Matrix Requirement Email integration
+# Matrix Requirement integration
 This is an example of using the Matrix Requirements API to integrate with your own systems. This basic example simply receives events and displays them on a web page.
 
 ## Requirements
