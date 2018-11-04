@@ -5,12 +5,15 @@ window.addEventListener("load", function() {
 
 function loadEvents(element) {
 	fetch("/events")
-	.then(function(response) {
-		console.info("JSON", response.json());
-		updateTable(element, response.json())
-	}).finally(function() {
-		setTimeout(function(){loadEvents(element)}, 500)
-	});
+		.then(function(response) {
+			console.info("JSON", response.json());
+			updateTable(element, response.json());
+		})
+		.finally(function() {
+			// setTimeout(function() {
+			// 	loadEvents(element);
+			// }, 500);
+		});
 }
 
 function updateTable(element, events) {
