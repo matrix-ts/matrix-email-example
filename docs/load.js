@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
 function loadEvents(element) {
 	fetch("/events")
 		.then(function(response) {
-			console.info("JSON", response.json());
+			// console.info("JSON", response.json());
 			updateTable(response.json());
 		})
 		.finally(function() {
