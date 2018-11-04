@@ -1,32 +1,32 @@
 window.addEventListener("load", function() {
-	loadEvents(document.getElementById("list"));
+	loadEvents();
 });
 
-function loadEvents(element) {
+function loadEvents() {
 	fetch("/events")
 		.then(function(response) {
 			return response.json();
 		})
 		.then(function(json) {
 			console.info("Event Updates", json);
-			updateTable(element, json);
+			updateTable(json);
 		})
 		.finally(function() {
-			setTimeout(function() {
-				loadEvents(element);
-			}, 500);
+			loadEvents, 500);
 		});
 }
 
-function updateTable(element, events) {
-	var newRows = document.createElement("tbody");
+function updateTable(events) {
+	var bodyID = "list"
+	var oldBody = document.getElementById(bodyID);
+	var newBody = document.createElement("tbody").setAttribute("id",bodyID);
 	for (var i = 0; i < events.length; i++) {
-		var row = newRows.insertRow();
+		var row = newBody.insertRow();
 		row.insertCell().appendChild(document.createTextNode(events[i].time));
 		row.insertCell().appendChild(document.createTextNode(events[i].action));
 		row.insertCell().appendChild(
 			document.createTextNode(events[i].project)
 		);
 	}
-	element.parentNode.replaceChild(newRows, element);
+	oldBody.parentNode.replaceChild(newBody, oldBody);
 }
