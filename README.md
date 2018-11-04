@@ -4,6 +4,10 @@ This is an example of using the Matrix Requirements API to integrate with your o
 ## Requirements
 Since the Matrix system needs a public URL to call with notifications, this example has to run on a publicly available system. To do this we install the service on [Heroku](http://www.heroku.com) which is an easy to use deployment platform for web applications.
 
+## Run it
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Setup: Matrix
 
     {
